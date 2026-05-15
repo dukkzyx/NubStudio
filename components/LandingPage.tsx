@@ -37,8 +37,9 @@ const copy = {
     ],
     stackTitle: "Stack de trabajo",
     stackIntro: "Tecnologias para construir rapido.",
-    threeDTitle: "3D elegante",
-    threeDText: "Visuales interactivos que suman valor sin distraer.",
+    threeDTitle: "Modelos 3D que venden mejor tu producto.",
+    threeDText:
+      "Integro modelos GLB optimizados, escenas WebGL fluidas y prototipos Unity o Unreal para mostrar espacios, productos y experiencias interactivas directamente en la web.",
     portfolioTitle: "Portafolio",
     portfolioText: "Mi GitHub.",
     portfolioCta: "NubStudio",
@@ -78,8 +79,9 @@ const copy = {
     ],
     stackTitle: "Working stack",
     stackIntro: "Tools for fast builds.",
-    threeDTitle: "Elegant 3D",
-    threeDText: "Interactive visuals that add value without distraction.",
+    threeDTitle: "3D models that sell your product better.",
+    threeDText:
+      "I integrate optimized GLB models, smooth WebGL scenes, and Unity or Unreal prototypes to showcase spaces, products, and interactive experiences directly on the web.",
     portfolioTitle: "Portfolio",
     portfolioText: "My GitHub.",
     portfolioCta: "NubStudio",
