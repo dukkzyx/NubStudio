@@ -27,7 +27,7 @@ const copy = {
     menu: "Menu",
     close: "Cerrar",
     eyebrow: "Next.js, 3D y experiencias digitales",
-    title: "Webs premium en Mexico.",
+    title: "Servicios Web y 3D.",
     intro:
       "Landing pages, e-commerce y experiencias 3D rapidas, limpias y listas para convertir visitas en clientes.",
     primary: "Cotizar proyecto",
@@ -65,7 +65,7 @@ const copy = {
     motion: "Reducir movimiento",
     readPage: "Leer pagina",
     stopReader: "Detener lectura",
-    footer: "© 2026 Nub Studio - Web, 3D y experiencias interactivas. Diego de la Fuente.",
+    footer: "© 2026 Nub Studio - Diego de la Fuente.",
   },
   en: {
     nav: ["Services", "Responsive", "Stack", "3D", "GitHub", "Contact"],
@@ -73,7 +73,7 @@ const copy = {
     menu: "Menu",
     close: "Close",
     eyebrow: "Next.js, 3D and digital experiences",
-    title: "Premium websites in Mexico.",
+    title: "Web and 3D services.",
     intro:
       "Fast, clean landing pages, e-commerce and 3D experiences built to turn visits into clients.",
     primary: "Quote project",
@@ -111,7 +111,7 @@ const copy = {
     motion: "Reduce motion",
     readPage: "Read page",
     stopReader: "Stop reading",
-    footer: "© 2026 Nub Studio - Web, 3D and interactive experiences. Diego de la Fuente.",
+    footer: "© 2026 Nub Studio - Diego de la Fuente.",
   },
 } as const;
 

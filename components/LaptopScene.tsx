@@ -51,6 +51,9 @@ export default function LaptopScene({ reducedMotion }: LaptopSceneProps) {
     let model: THREE.Object3D | null = null;
     let frameId = 0;
     let targetRotation = 0;
+    const introStart = performance.now();
+    const introDuration = 1050;
+    const easeOutCubic = (value: number) => 1 - Math.pow(1 - Math.min(Math.max(value, 0), 1), 3);
 
     const loader = new GLTFLoader();
     loader.load("/laptop.glb", (gltf) => {
@@ -92,9 +95,13 @@ export default function LaptopScene({ reducedMotion }: LaptopSceneProps) {
     const animate = () => {
       frameId = window.requestAnimationFrame(animate);
       if (model) {
+        const introProgress = reducedMotion ? 1 : easeOutCubic((performance.now() - introStart) / introDuration);
+        const introOffset = (1 - introProgress) * 2.4;
+
         modelRoot.rotation.y += (targetRotation - modelRoot.rotation.y) * 0.065;
         modelRoot.rotation.x = 0;
-        if (!reducedMotion) modelRoot.position.y = Math.sin(performance.now() * 0.001) * 0.035;
+        modelRoot.position.y = introOffset;
+        if (!reducedMotion) modelRoot.position.y += Math.sin(performance.now() * 0.001) * 0.035;
       }
       renderer.render(scene, camera);
     };
