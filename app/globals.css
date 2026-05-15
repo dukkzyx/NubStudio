@@ -30,6 +30,8 @@
 }
 
 html {
+  background: var(--bg);
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -45,9 +47,14 @@ body {
   font-size: calc(16px * var(--font-scale));
   min-height: 100vh;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
   transition:
     background 420ms ease,
     color 320ms ease;
+}
+
+body[data-menu="open"] {
+  overflow: hidden;
 }
 
 body[data-theme="light"] {
@@ -904,6 +911,14 @@ footer {
     z-index: 30;
   }
 
+  .topbar.is-menu-open {
+    align-content: start;
+    max-height: calc(100svh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .hamburger {
     display: block;
   }
@@ -923,13 +938,12 @@ footer {
   }
 
   .nav-area.is-open {
-    max-height: min(82svh, 720px);
+    max-height: none;
     opacity: 1;
     pointer-events: auto;
-    overflow-y: auto;
-    overscroll-behavior: contain;
     padding-bottom: 0.3rem;
     padding-right: 0.1rem;
+    overflow: visible;
   }
 
   .nav-links {
@@ -976,15 +990,15 @@ footer {
   }
 
   .access-popover.is-open {
-    max-height: min(56svh, 520px);
+    max-height: none;
     pointer-events: auto;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    overflow: visible;
   }
 
   .access-panel {
     margin-top: 0.65rem;
     min-height: 0;
+    padding-bottom: 1rem;
   }
 
   .hero,
@@ -1027,7 +1041,11 @@ footer {
 @media (max-width: 620px) {
   .topbar {
     max-width: calc(100vw - 1rem);
-    top: 0.5rem;
+    top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  .topbar.is-menu-open {
+    max-height: calc(100svh - max(1rem, env(safe-area-inset-top) + 0.5rem));
   }
 
   .section-band {

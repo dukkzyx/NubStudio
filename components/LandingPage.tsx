@@ -173,6 +173,10 @@ export default function LandingPage() {
   }, [theme, fontSize, highContrast, colorMode, reducedMotion]);
 
   useEffect(() => {
+    document.body.dataset.menu = mobileMenuOpen ? "open" : "closed";
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
     const onPointerDown = (event: PointerEvent) => {
       const target = event.target;
       if (!(target instanceof Node)) return;
@@ -321,7 +325,7 @@ export default function LandingPage() {
 
   return (
     <main className="site-shell">
-      <header className="topbar" ref={headerRef}>
+      <header className={mobileMenuOpen ? "topbar is-menu-open" : "topbar"} ref={headerRef}>
         <a href="#home" className="brand" aria-label="Inicio" onClick={closeMenus}>
           <span className="brand-mark" aria-hidden="true" />
           <span>Nub Studio</span>
