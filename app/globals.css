@@ -208,6 +208,21 @@ a:focus-visible {
   min-width: max-content;
 }
 
+.brand span:last-child {
+  background: linear-gradient(135deg, var(--text) 0%, var(--text) 45%, var(--accent) 55%, var(--accent-2) 76%, var(--accent-3) 100%);
+  background-clip: text;
+  background-size: 240% 100%;
+  color: transparent;
+  transition:
+    background-position 260ms ease,
+    filter 220ms ease;
+}
+
+.brand:hover span:last-child {
+  background-position: 100% 0;
+  filter: brightness(1.08);
+}
+
 .brand-mark {
   background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
   border-radius: 50%;
@@ -885,6 +900,15 @@ footer {
   max-width: 1180px;
   padding: 2rem 1.2rem 3rem;
   text-align: center;
+}
+
+footer span,
+footer a {
+  display: block;
+}
+
+footer a {
+  margin-top: 0.35rem;
 }
 
 footer a {
