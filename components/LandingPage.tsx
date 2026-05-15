@@ -10,6 +10,11 @@ const LaptopScene = dynamic(() => import("./LaptopScene"), {
   loading: () => <div className="laptop-scene loading-model" aria-hidden="true" />,
 });
 
+const ResponsiveScene = dynamic(() => import("./ResponsiveScene"), {
+  ssr: false,
+  loading: () => <div className="responsive-scene loading-model" aria-hidden="true" />,
+});
+
 type Language = "es" | "en";
 type Theme = "light" | "dark";
 type FontSize = "normal" | "large" | "xlarge";
@@ -17,7 +22,7 @@ type ColorMode = "default" | "protanopia" | "deuteranopia" | "tritanopia";
 
 const copy = {
   es: {
-    nav: ["Servicios", "Stack", "3D", "GitHub", "Contacto"],
+    nav: ["Servicios", "Responsive", "Stack", "3D", "GitHub", "Contacto"],
     accessibility: "Accesibilidad",
     menu: "Menu",
     close: "Cerrar",
@@ -35,6 +40,10 @@ const copy = {
       ["Web 3D", "Modelos GLB e interaccion con scroll."],
       ["Juegos 3D", "Prototipos Unity y Unreal."],
     ],
+    responsiveTitle: "Responsive",
+    responsiveIntro: "Perfecta en cualquier pantalla.",
+    responsiveText:
+      "Cada seccion se adapta a distintos tamanos de pantalla para que tus clientes puedan navegar, leer y comprar con comodidad desde una laptop, tablet o telefono.",
     stackTitle: "Stack de trabajo",
     stackIntro: "Tecnologias para construir rapido.",
     threeDTitle: "Modelos 3D que venden mejor tu producto.",
@@ -56,10 +65,10 @@ const copy = {
     motion: "Reducir movimiento",
     readPage: "Leer pagina",
     stopReader: "Detener lectura",
-    footer: "Nub Studio - Web, 3D y experiencias interactivas.",
+    footer: "© 2026 Nub Studio - Web, 3D y experiencias interactivas. Diego de la Fuente.",
   },
   en: {
-    nav: ["Services", "Stack", "3D", "GitHub", "Contact"],
+    nav: ["Services", "Responsive", "Stack", "3D", "GitHub", "Contact"],
     accessibility: "Accessibility",
     menu: "Menu",
     close: "Close",
@@ -77,6 +86,10 @@ const copy = {
       ["3D web", "GLB models and scroll interaction."],
       ["3D games", "Unity and Unreal prototypes."],
     ],
+    responsiveTitle: "Responsive",
+    responsiveIntro: "Perfect on every screen.",
+    responsiveText:
+      "Every section adapts to different screen sizes so your clients can browse, read, and buy comfortably from a laptop, tablet, or phone.",
     stackTitle: "Working stack",
     stackIntro: "Tools for fast builds.",
     threeDTitle: "3D models that sell your product better.",
@@ -98,11 +111,11 @@ const copy = {
     motion: "Reduce motion",
     readPage: "Read page",
     stopReader: "Stop reading",
-    footer: "Nub Studio - Web, 3D and interactive experiences.",
+    footer: "© 2026 Nub Studio - Web, 3D and interactive experiences. Diego de la Fuente.",
   },
 } as const;
 
-const navTargets = ["#services", "#stack", "#three-d", "#portfolio", "#contact"];
+const navTargets = ["#services", "#responsive", "#stack", "#three-d", "#portfolio", "#contact"];
 const whatsappNumber = "528181766738";
 
 const techs = [
@@ -151,6 +164,9 @@ export default function LandingPage() {
         t.servicesTitle,
         t.servicesIntro,
         ...t.services.flat(),
+        t.responsiveTitle,
+        t.responsiveIntro,
+        t.responsiveText,
         t.stackTitle,
         t.threeDTitle,
         t.portfolioTitle,
@@ -430,6 +446,19 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section id="responsive" className="section-band responsive-section centered-section reveal">
+        <div className="responsive-sticky">
+          <div className="section-heading compact responsive-copy">
+            <p className="eyebrow">{t.responsiveTitle}</p>
+            <h2>{t.responsiveIntro}</h2>
+            <p className="responsive-description">{t.responsiveText}</p>
+          </div>
+          <div className="responsive-devices">
+            <ResponsiveScene reducedMotion={reducedMotion} />
+          </div>
+        </div>
+      </section>
+
       <section id="stack" className="section-band stack-section centered-section reveal">
         <div className="section-heading compact">
           <p className="eyebrow">{t.stackTitle}</p>
@@ -495,7 +524,16 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer>{t.footer}</footer>
+      <footer>
+        <span>{t.footer}</span>
+        <a
+          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t.contactMessage)}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          +52 81 8176 6738
+        </a>
+      </footer>
     </main>
   );
 }

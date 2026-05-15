@@ -464,6 +464,7 @@ h3 {
 
 .lead,
 .three-d-copy p,
+.responsive-description,
 .service-card p,
 .portfolio h2 {
   color: var(--muted);
@@ -685,11 +686,63 @@ h3 {
   margin: 0.9rem 0 0;
 }
 
+.responsive-section {
+  min-height: 172svh;
+  max-width: none;
+  padding: 0 1.2rem;
+  position: relative;
+}
+
+.responsive-sticky {
+  display: grid;
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  margin: 0 auto;
+  max-width: 1180px;
+  min-height: 76svh;
+  padding-top: 7.2rem;
+  position: sticky;
+  top: 0;
+}
+
+.responsive-section .section-heading {
+  margin-bottom: 0;
+}
+
+.responsive-description {
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+  margin: 0.75rem auto 0;
+  max-width: 620px;
+}
+
+.responsive-devices {
+  margin: 0 auto;
+  max-width: 820px;
+  min-height: clamp(18rem, 34vw, 26rem);
+  transform: translateY(0);
+  width: 100%;
+}
+
+.responsive-scene {
+  height: 100%;
+  min-height: clamp(18rem, 34vw, 26rem);
+  width: 100%;
+}
+
+.responsive-scene canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .stack-section {
   max-width: none;
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
+}
+
+.responsive-section + .stack-section {
+  padding-top: 0.25rem;
 }
 
 .stack-section .section-heading {
@@ -700,7 +753,7 @@ h3 {
 }
 
 .tech-carousel {
-  margin-top: 1.6rem;
+  margin-top: clamp(4.6rem, 6vw, 5.6rem);
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   overflow: hidden;
   width: 100%;
@@ -831,6 +884,15 @@ footer {
   margin: 0 auto;
   max-width: 1180px;
   padding: 2rem 1.2rem 3rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--accent);
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .reveal {
@@ -907,6 +969,7 @@ footer {
     align-items: center;
     border-radius: 1rem;
     display: grid;
+    gap: 0;
     grid-template-columns: 1fr auto;
     z-index: 30;
   }
@@ -941,6 +1004,7 @@ footer {
     max-height: none;
     opacity: 1;
     pointer-events: auto;
+    padding-top: 0.75rem;
     padding-bottom: 0.3rem;
     padding-right: 0.1rem;
     overflow: visible;
@@ -951,7 +1015,6 @@ footer {
     display: grid;
     gap: 0.35rem;
     min-height: 0;
-    padding-top: 0.75rem;
   }
 
   .nav-links a,
@@ -1002,6 +1065,7 @@ footer {
   }
 
   .hero,
+  .responsive-section,
   .three-d {
     grid-template-columns: 1fr;
   }
@@ -1018,6 +1082,10 @@ footer {
   .hero-visual {
     position: relative;
     top: auto;
+  }
+
+  .responsive-sticky {
+    padding-top: 8.8rem;
   }
 
   .service-grid {
@@ -1054,7 +1122,7 @@ footer {
   }
 
   .hero {
-    padding-top: 10.25rem;
+    padding-top: 8.75rem;
   }
 
   h1 {
@@ -1080,6 +1148,23 @@ footer {
     min-height: 12.5rem;
   }
 
+  .services {
+    padding-bottom: 2.5rem;
+  }
+
+  .responsive-sticky {
+    padding-top: 5.8rem;
+  }
+
+  .responsive-devices {
+    min-height: 18rem;
+    transform: translateY(0);
+  }
+
+  .responsive-scene {
+    min-height: 18rem;
+  }
+
   .laptop-scene,
   .hero-visual {
     min-height: 330px;
@@ -1091,5 +1176,14 @@ footer {
 
   .mini-specs span {
     min-width: calc(50% - 0.36rem);
+  }
+
+  .portfolio {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+
+  .contact {
+    padding-top: 4rem;
   }
 }
