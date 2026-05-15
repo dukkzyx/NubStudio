@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Unity logo">
+  <rect width="64" height="64" rx="16" fill="#111"/>
+  <path d="M43 11 53 29l-9 5-10-18 9-5ZM21 21h20l-9 17H12l9-17Zm23 22-11 10-10-17h21v7Z" fill="#f6f7fb"/>
+  <path d="m32 16-9 5 9 17 9-17-9-5Z" fill="#b9c2d0"/>
+</svg>
