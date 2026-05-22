@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Servicios Web, 3D y Experiencias Interactivas",
   description:
-    "Desarrollo de landing pages, e-commerce, modelado 3D y experiencias con Unity y Unreal Engine.",
+    "Desarrollo de landing pages, catalogos digitales, modelado 3D y experiencias con Unity y Unreal Engine.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

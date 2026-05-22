@@ -22,39 +22,40 @@ type ColorMode = "default" | "protanopia" | "deuteranopia" | "tritanopia";
 
 const copy = {
   es: {
-    nav: ["Servicios", "Responsive", "Stack", "3D", "GitHub", "Contacto"],
+    nav: ["Servicios", "Responsive", "Portafolio", "Stack", "3D", "Contacto"],
     accessibility: "Accesibilidad",
     menu: "Menu",
     close: "Cerrar",
     eyebrow: "Next.js, 3D y experiencias digitales",
     title: "Servicios Web y 3D.",
     intro:
-      "Landing pages, e-commerce y experiencias 3D rapidas, limpias y listas para convertir visitas en clientes.",
-    primary: "Cotizar proyecto",
+      "Landing pages, catalogos digitales y experiencias 3D rapidas y limpias.",
+    primary: "Solicitar proyecto",
     secondary: "Ver servicios",
     servicesTitle: "Servicios",
-    servicesIntro: "Diseno, tienda o 3D.",
+    servicesIntro: "Diseño, catalogo o 3D.",
     services: [
       ["Landing pages", "Mensaje claro, diseño premium y conversion."],
-      ["E-commerce", "Catalogos rapidos y compras sin friccion."],
+      ["Catalogos", "Productos bien presentados, filtros claros y navegacion simple."],
       ["Web 3D", "Modelos GLB e interaccion con scroll."],
       ["Juegos 3D", "Prototipos Unity y Unreal."],
     ],
     responsiveTitle: "Responsive",
     responsiveIntro: "Perfecta en cualquier pantalla.",
     responsiveText:
-      "Cada seccion se adapta a distintos tamanos de pantalla para que tus clientes puedan navegar, leer y comprar con comodidad desde una laptop, tablet o telefono.",
+      "Cada seccion se adapta a distintos tamanos de pantalla para que tus clientes puedan navegar, leer y explorar tu catalogo con comodidad desde una laptop, tablet o telefono.",
     stackTitle: "Stack de trabajo",
     stackIntro: "Tecnologias para construir rapido.",
     threeDTitle: "Modelos 3D que venden mejor tu producto.",
     threeDText:
       "Integro modelos GLB optimizados, escenas WebGL fluidas y prototipos Unity o Unreal para mostrar espacios, productos y experiencias interactivas directamente en la web.",
     portfolioTitle: "Portafolio",
-    portfolioText: "Mi GitHub.",
-    portfolioCta: "NubStudio",
+    portfolioText: "Proyectos recientes.",
+    portfolioCta: "Mi Github",
+    portfolioVisit: "Visitar sitio",
     contactTitle: "Contacto",
     contactIntro: "Cuéntame que quieres construir.",
-    contactMessage: "Hola, quiero cotizar un proyecto web con Nub Studio.",
+    contactMessage: "Hola, quiero solicitar un proyecto web con Nub Studio.",
     contactPlaceholder: "Escribe tu mensaje para WhatsApp...",
     contactSend: "Enviar por WhatsApp",
     theme: "Tema",
@@ -68,39 +69,40 @@ const copy = {
     footer: "© 2026 Nub Studio - Diego de la Fuente.",
   },
   en: {
-    nav: ["Services", "Responsive", "Stack", "3D", "GitHub", "Contact"],
+    nav: ["Services", "Responsive", "Portfolio", "Stack", "3D", "Contact"],
     accessibility: "Accessibility",
     menu: "Menu",
     close: "Close",
     eyebrow: "Next.js, 3D and digital experiences",
     title: "Web and 3D services.",
     intro:
-      "Fast, clean landing pages, e-commerce and 3D experiences built to turn visits into clients.",
-    primary: "Quote project",
+      "Fast, clean landing pages, digital catalogs and 3D experiences.",
+    primary: "Request project",
     secondary: "View services",
     servicesTitle: "Services",
-    servicesIntro: "Design, store or 3D.",
+    servicesIntro: "Design, catalog or 3D.",
     services: [
       ["Landing pages", "Clear message, premium design and conversion."],
-      ["E-commerce", "Fast catalogs and frictionless checkout."],
+      ["Catalogs", "Well-presented products, clear filters and simple browsing."],
       ["3D web", "GLB models and scroll interaction."],
       ["3D games", "Unity and Unreal prototypes."],
     ],
     responsiveTitle: "Responsive",
     responsiveIntro: "Perfect on every screen.",
     responsiveText:
-      "Every section adapts to different screen sizes so your clients can browse, read, and buy comfortably from a laptop, tablet, or phone.",
+      "Every section adapts to different screen sizes so your clients can browse, read and explore your catalog comfortably from a laptop, tablet, or phone.",
     stackTitle: "Working stack",
     stackIntro: "Tools for fast builds.",
     threeDTitle: "3D models that sell your product better.",
     threeDText:
       "I integrate optimized GLB models, smooth WebGL scenes, and Unity or Unreal prototypes to showcase spaces, products, and interactive experiences directly on the web.",
     portfolioTitle: "Portfolio",
-    portfolioText: "My GitHub.",
-    portfolioCta: "NubStudio",
+    portfolioText: "Recent projects.",
+    portfolioCta: "My Github",
+    portfolioVisit: "Visit site",
     contactTitle: "Contact",
     contactIntro: "Tell me what you want to build.",
-    contactMessage: "Hi, I want to quote a web project with Nub Studio.",
+    contactMessage: "Hi, I want to request a web project with Nub Studio.",
     contactPlaceholder: "Write your WhatsApp message...",
     contactSend: "Send on WhatsApp",
     theme: "Theme",
@@ -115,7 +117,7 @@ const copy = {
   },
 } as const;
 
-const navTargets = ["#services", "#responsive", "#stack", "#three-d", "#portfolio", "#contact"];
+const navTargets = ["#services", "#responsive", "#portfolio", "#stack", "#three-d", "#contact"];
 const whatsappNumber = "528181766738";
 
 const techs = [
@@ -139,6 +141,29 @@ const specs = [
   ["GLB", "/logos/glb.svg"],
   ["Unity", "/logos/unity.svg"],
   ["Unreal", "/logos/unreal.svg"],
+] as const;
+
+const portfolioProjects = [
+  {
+    title: "CD Webz",
+    image: "/cdwebz.png",
+    url: "https://cdwebz.com/",
+  },
+  {
+    title: "Last Frame",
+    image: "/lastframe.png",
+    url: "https://lastframeweb.vercel.app/",
+  },
+  {
+    title: "Assylum",
+    image: "/asylum.png",
+    url: "https://dukkzyx.github.io/assylum/",
+  },
+  {
+    title: "Nub Studio",
+    image: "/nubstudiio.png",
+    url: "https://nub-studio.vercel.app/",
+  },
 ] as const;
 
 export default function LandingPage() {
@@ -432,8 +457,8 @@ export default function LandingPage() {
               onClick={() =>
                 goToContact(
                   language === "es"
-                    ? `Hola, quiero cotizar el servicio de ${title}. ${description}`
-                    : `Hi, I want to quote the ${title} service. ${description}`,
+                    ? `Hola, quiero solicitar el servicio de ${title}. ${description}`
+                    : `Hi, I want to request the ${title} service. ${description}`,
                 )
               }
               style={{ "--delay": `${index * 90}ms` } as CSSProperties}
@@ -457,6 +482,43 @@ export default function LandingPage() {
             <ResponsiveScene reducedMotion={reducedMotion} />
           </div>
         </div>
+      </section>
+
+      <section id="portfolio" className="section-band portfolio centered-section reveal">
+        <p className="eyebrow">{t.portfolioTitle}</p>
+        <h2>{t.portfolioText}</h2>
+        <div className="portfolio-grid">
+          {portfolioProjects.map((project, index) => (
+            <a
+              className="portfolio-card"
+              href={project.url}
+              key={project.title}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${project.title} - ${project.url}`}
+              style={{ "--delay": `${index * 90}ms` } as CSSProperties}
+            >
+              <Image
+                src={project.image}
+                alt={`Preview de ${project.title}`}
+                fill
+                sizes="(max-width: 620px) 100vw, (max-width: 980px) 50vw, 25vw"
+              />
+              <span className="portfolio-overlay">
+                <span className="portfolio-link">{t.portfolioVisit}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+        <a
+          className="button primary portfolio-repo"
+          href="https://github.com/dukkzyx"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Repositorio NubStudio en GitHub"
+        >
+          {t.portfolioCta}
+        </a>
       </section>
 
       <section id="stack" className="section-band stack-section centered-section reveal">
@@ -490,20 +552,6 @@ export default function LandingPage() {
             </span>
           ))}
         </div>
-      </section>
-
-      <section id="portfolio" className="section-band portfolio centered-section reveal">
-        <p className="eyebrow">{t.portfolioTitle}</p>
-        <h2>{t.portfolioText}</h2>
-        <a
-          className="button primary"
-          href="https://github.com/dukkzyx/NubStudio.git"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Repositorio NubStudio en GitHub"
-        >
-          {t.portfolioCta}
-        </a>
       </section>
 
       <section id="contact" className="section-band contact centered-section reveal">
