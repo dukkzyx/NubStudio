@@ -127,8 +127,6 @@ const techs = [
   ["H5", "HTML"],
   ["C3", "CSS"],
   ["JS", "JavaScript"],
-  ["Vue", "Vue"],
-  ["Py", "Python"],
   ["C#", "C#"],
   ["C++", "C++"],
   ["SQL", "SQL"],
